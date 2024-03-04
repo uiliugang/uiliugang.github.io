@@ -35,12 +35,8 @@
     .autboP_xS3EJZt4GoTeY {
         display: none !important;
     }
-    .aside .logo-wrap[data-v-37c807ee], .aside[data-v-37c807ee] {
+    .aside .logo-wrap[data-v-37c807ee], .aside[data-v-37c807ee], .popupShow, .popup, .semi-portal {
         display: none !important;
-    }
-
-    .popupShow, .popup {
-       display: none !important;
     }
     `;
 
