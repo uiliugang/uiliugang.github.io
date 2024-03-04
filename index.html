@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-512/free-shiba-inu-5382326-4498198.png"
+        type="image/x-icon">
+    <title>Newgun</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 98%;
+            width: 100%;
+        }
+        ul {
+            width: 100%;
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            margin-left: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .tab-container {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+        }
+
+        .tab-group {
+            margin-left: 10px;
+            padding: 8px;
+            border-radius: 8px;
+            background-color: rgb(160, 209, 160);
+        }
+
+        .tab {
+            display: none;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        iframe {
+            margin: 0 auto;
+            border-left: none;
+            border-top: none;
+            margin: 10px;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .iframe-container {
+            height: calc(100% - 50px);
+            width: 98%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="tab-container">
+        <ul class="tab-group">
+            <li><a href="#tab1" onclick="showTab(1)">Gemini</a></li>
+            <li><a href="#tab2" onclick="showTab(2)">GPT4</a></li>
+            <li><a href="#tab3" onclick="showTab(3)">ChatGLM4</a></li>
+            <li><a href="#tab4" onclick="showTab(4)">Coze</a></li>
+            <li><a href="#tab5" onclick="showTab(5)">Feeds</a></li>
+            <li><a href="#tab6" onclick="showTab(6)">Relax</a></li>
+        </ul>
+    </div>
+
+
+    <div class="iframe-container">
+        <div id="tab1" class="tab active">
+            <iframe src="https://gemini-pro.chat/#/chat"></iframe>
+        </div>
+
+        <div id="tab2" class="tab">
+            <iframe src="https://gpt4.yanghuan.site/#/chat"></iframe>
+        </div>
+
+        <div id="tab3" class="tab">
+            <iframe src="https://chatglm.cn/main/alltoolsdetail"></iframe>
+        </div>
+
+        <div id="tab4" class="tab">
+            <iframe src="https://www.coze.com/space/7339191651635740679/bot/7339192577851195400"></iframe>
+        </div>
+        <div id="tab5" class="tab">
+            <iframe src="https://www.inoreader.com/login"></iframe>
+        </div>
+        <div id="tab6" class="tab">
+            <iframe src="https://www.freeok.vip/v-type/3.html"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function showTab(n) {
+            // 隐藏所有选项卡
+            var tabs = document.querySelectorAll(".tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            // 显示选定的选项卡
+            document.getElementById("tab" + n).classList.add("active");
+            if (n == 4 ) {
+                // Create a style element
+                var iframe = document.getElementById('tab4');
+                const style = document.createElement('style');
+                style.textContent = `
+                body, html {
+                min-height: unset !important;
+                min-width: unset !important;
+                }
+
+                ._y05dJu0HEE4KDXQl_02 {
+                    margin-bottom: 30px;
+                }
+
+                .GgZHQbhCPZYqXVil_nkc {
+                margin-left: 24px;
+                }
+                .GgZHQbhCPZYqXVil_nkc.yXFrvezYn_4mi6bhSzMN {
+                width: 300%;
+                }
+                div.GgZHQbhCPZYqXVil_nkc:nth-of-type(1),
+                div.GgZHQbhCPZYqXVil_nkc:nth-of-type(2),
+                .autboP_xS3EJZt4GoTeY {
+                    display: none !important;
+                }
+                `;
+                iframe.contentDocument.head.appendChild(style);
+            }
+        }
+        function getReadLaterBookmarks() {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            chrome.bookmarks.getSubTree(tabs[0].id, function(bookmarks) {
+                var readLaterFolder = bookmarks.find(function(bookmark) {
+                return bookmark.title === 'Read Later';
+                });
+
+                if (readLaterFolder) {
+                chrome.bookmarks.getTree(function(bookmarks) {
+                    var readLaterBookmarks = bookmarks.filter(function(bookmark) {
+                    return bookmark.parentId === readLaterFolder.id;
+                    });
+
+                    console.log(readLaterBookmarks);
+                });
+                }
+            });
+            });
+        }
+    </script>
+</body>
+
+</html>
