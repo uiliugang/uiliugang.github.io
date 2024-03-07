@@ -35,7 +35,8 @@
     .autboP_xS3EJZt4GoTeY {
         display: none !important;
     }
-    .aside .logo-wrap[data-v-37c807ee], .aside[data-v-37c807ee], .popupShow, .popup, .semi-portal {
+    .aside .logo-wrap[data-v-37c807ee], .aside[data-v-37c807ee], .popupShow,
+    .popup, .semi-portal, .aside .logo-wrap[data-v-a3a1df90], .aside[data-v-a3a1df90]{
         display: none !important;
     }
     `;
