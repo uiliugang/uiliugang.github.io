@@ -28,13 +28,8 @@ proxy-providers:
   cordcloud:
     type: http
     url: https://proxy-provider-converter-eight-phi.vercel.app/api/convert?url=https%3A%2F%2Fwww.ccsub.online%2Flink%2F5299LzTfGgUWqZ25%3Fclash%3D1&target=clash
-    interval: 3600
+    interval: 86400
     path: ./cordcloud.yaml
-    health-check:
-      enable: true
-      interval: 600
-      # lazy: true
-      url: http://www.gstatic.com/generate_204
 
 
 rule-providers:
