@@ -8,7 +8,7 @@ external-controller: '0.0.0.0:9090'
 secret: ''
 
 proxy-groups:
-  - name: 'auto'
+  - name: 'Auto'
     type: url-test
     interval: 300
     url: "http://www.gstatic.com/generate_204"
@@ -19,8 +19,8 @@ proxy-groups:
   - name: 'PROXY'
     type: select 
     proxies: 
-      - 'auto'
       - DIRECT
+      - 'Auto'
     use:
       - cordcloud
 
