@@ -1,0 +1,184 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+allow-lan: false
+mode: rule
+log-level: silent
+external-controller: '0.0.0.0:9090'
+secret: ''
+
+proxy-groups:
+  - name: 'auto'
+    type: url-test
+    interval: 300
+    url: "http://www.gstatic.com/generate_204"
+    use:
+      - cordcloud
+    tolerance: 10
+
+  - name: 'PROXY'
+    type: select 
+    proxies: 
+      - 'auto'
+      - DIRECT
+    use:
+      - cordcloud
+
+proxy-providers:
+  cordcloud:
+    type: http
+    url: https://proxy-provider-converter-eight-phi.vercel.app/api/convert?url=https%3A%2F%2Fwww.ccsub.online%2Flink%2F5299LzTfGgUWqZ25%3Fclash%3D1&target=clash
+    interval: 3600
+    path: ./cordcloud.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
+
+rules:
+  - DOMAIN-KEYWORD,google,PROXY
+  - DOMAIN-KEYWORD,ai,PROXY
+  - DOMAIN-KEYWORD,copilot,PROXY
+  - DOMAIN-KEYWORD,github,PROXY
+  - DOMAIN-KEYWORD,youtube,PROXY
+  - DOMAIN-KEYWORD,openai,PROXY
+  - DOMAIN-KEYWORD,cordc,PROXY
+  - DOMAIN-KEYWORD,netflix,PROXY
+  - DOMAIN-KEYWORD,ycombinator,PROXY
+  - DOMAIN-KEYWORD,spotify,PROXY  
+  - DOMAIN-KEYWORD,feedly,PROXY  
+  - DOMAIN-KEYWORD,duckduckgo,PROXY 
+  - DOMAIN-KEYWORD,vivaldi,PROXY  
+  - DOMAIN-KEYWORD,notion,PROXY  
+  - DOMAIN-KEYWORD,pinterest,PROXY
+  - DOMAIN-KEYWORD,polywork,PROXY
+  - DOMAIN-KEYWORD,cloudfunctions,PROXY
+  - DOMAIN-KEYWORD,gaggle,PROXY
+  - DOMAIN-KEYWORD,instagram,PROXY
+  - DOMAIN-KEYWORD,facebook,PROXY
+  - DOMAIN-KEYWORD,tiktok,PROXY
+  - DOMAIN-KEYWORD,pinterest,PROXY
+  - DOMAIN-KEYWORD,dropbox,PROXY
+  - DOMAIN-KEYWORD,twitter,PROXY
+  - DOMAIN-KEYWORD,medium,PROXY
+  - DOMAIN-KEYWORD,slack,PROXY
+  - DOMAIN-KEYWORD,postman,PROXY
+  - DOMAIN-KEYWORD,telegram,PROXY
+  - DOMAIN-KEYWORD,apkpure,PROXY
+  - DOMAIN-KEYWORD,whatsapp,PROXY
+  - DOMAIN-KEYWORD,quora,PROXY
+  - DOMAIN-KEYWORD,stackoverflow,PROXY
+  - DOMAIN-KEYWORD,messenger,PROXY
+  - DOMAIN-KEYWORD,z-lib,PROXY
+  - DOMAIN-KEYWORD,forbes,PROXY
+  - DOMAIN-KEYWORD,v2ex,PROXY
+  - DOMAIN-KEYWORD,reddit,PROXY
+  - DOMAIN-KEYWORD,telegram,PROXY
+  - DOMAIN-KEYWORD,oculus,PROXY
+  - DOMAIN-KEYWORD,bootstrapcdn,PROXY
+  - DOMAIN-KEYWORD,porn,PROXY
+  - DOMAIN-KEYWORD,twitter,PROXY
+  - DOMAIN-KEYWORD,wikipedia,PROXY
+  - DOMAIN-KEYWORD,wikimedia,PROXY
+  - DOMAIN-KEYWORD,nytimes,PROXY
+  - DOMAIN-KEYWORD,bbc,PROXY
+  - DOMAIN-KEYWORD,discord,PROXY
+  - DOMAIN-KEYWORD,comic,PROXY
+  - DOMAIN-KEYWORD,coze,PROXY
+  - DOMAIN-SUFFIX,ciciai.com,PROXY
+  - DOMAIN-SUFFIX,copilot.microsoft.com,PROXY
+  - DOMAIN-SUFFIX,twimg.com,PROXY
+  - DOMAIN-SUFFIX,gravatar.com,PROXY
+  - DOMAIN-SUFFIX,imgur.com,PROXY
+  - DOMAIN-SUFFIX,onedrive.live.com,PROXY
+  - DOMAIN-SUFFIX,deviantart.com,PROXY
+  - DOMAIN-SUFFIX,singlelogin.re,PROXY
+  - DOMAIN-SUFFIX,deviantart.net,PROXY
+  - DOMAIN-SUFFIX,.tw,PROXY
+  - DOMAIN-SUFFIX,c.neevacdn.net,PROXY
+  - DOMAIN-SUFFIX,redd.it,PROXY
+  - DOMAIN-SUFFIX,ggpht.com,PROXY
+  - DOMAIN-SUFFIX,ytimg.com,PROXY
+  - DOMAIN-SUFFIX,steamcommunity.com,PROXY
+  - DOMAIN-SUFFIX,store.steampowered.com,PROXY  
+  - DOMAIN-SUFFIX,cdn.akamai.steamstatic.com,PROXY  
+  - DOMAIN-SUFFIX,xboxlive.com,PROXY
+  - DOMAIN-SUFFIX,time.windows.com,PROXY
+  - DOMAIN-SUFFIX,gstatic.com,PROXY
+  - DOMAIN-SUFFIX,pinimg.com,PROXY
+  - DOMAIN-SUFFIX,washingtonpost.com,PROXY
+  - DOMAIN-SUFFIX,community.thorn.red,PROXY
+  - DOMAIN-SUFFIX,jwplayer.com,PROXY
+  - DOMAIN-SUFFIX,blogger.com,PROXY
+  - DOMAIN-SUFFIX,blogspot.com,PROXY
+  - DOMAIN-SUFFIX,go.dev,PROXY
+  - DOMAIN-SUFFIX,nyt.com,PROXY
+  - DOMAIN-SUFFIX,dmhy.org,PROXY
+  - DOMAIN-SUFFIX,docs.rsshub.app,PROXY
+  - DOMAIN-SUFFIX,inoreader.com,PROXY  
+  - DOMAIN-SUFFIX,brave.com,PROXY  
+  - DOMAIN-SUFFIX,obsidian.md,PROXY  
+  - DOMAIN-SUFFIX,dropbox.com,PROXY  
+  - DOMAIN-SUFFIX,repo.anaconda.com,PROXY  
+  - DOMAIN-SUFFIX,rsshub.app,PROXY   
+  - DOMAIN-SUFFIX,cfw.lbyczf.com,PROXY   
+  - DOMAIN-SUFFIX,medium.com,PROXY   
+  - DOMAIN-SUFFIX,youtu.be,PROXY   
+  - DOMAIN-SUFFIX,t.co,PROXY  
+  - DOMAIN-SUFFIX,t.me,PROXY  
+  - DOMAIN-SUFFIX,cdp.cloud.unity3d.com,PROXY
+  - DOMAIN-SUFFIX,akamaihd.net,PROXY 
+  - DOMAIN-SUFFIX,golang.org,PROXY 
+  - DOMAIN-SUFFIX,golang.dev,PROXY 
+  - DOMAIN-SUFFIX,login.microsoftonline.com,PROXY 
+  - DOMAIN-SUFFIX,login.live.com,PROXY
+  - DOMAIN-SUFFIX,feed43.com,PROXY
+  - DOMAIN-SUFFIX,freegpt.one,PROXY
+  - DOMAIN-SUFFIX,economist.com,PROXY
+  - DOMAIN-SUFFIX,godamanga.com,PROXY
+  - DOMAIN-SUFFIX,chinai.substack.com,PROXY
+  - DOMAIN-SUFFIX,go-cyub-vip.disqus.com,PROXY
+  - DOMAIN-SUFFIX,go.cyub.vip,PROXY
+  - DOMAIN-SUFFIX,disqus.com,PROXY
+  - DOMAIN-SUFFIX,bing.com,PROXY
+  - DOMAIN-SUFFIX,office.net,PROXY
+  - DOMAIN-SUFFIX,go.microsoft.com,PROXY
+  - DOMAIN-SUFFIX,hub.docker.com,PROXY
+  - DOMAIN-SUFFIX,api.steampowered.com,PROXY
+  - DOMAIN-SUFFIX,you.com,PROXY
+  - DOMAIN-SUFFIX,codingnote.cc,PROXY
+  - DOMAIN-SUFFIX,telemetry.mozilla.org,PROXY
+  - DOMAIN-SUFFIX,thepiratebay.org,PROXY
+  - DOMAIN-SUFFIX,cms-twdigitalassets.com,PROXY
+  - DOMAIN-SUFFIX,poe.com,PROXY
+  - DOMAIN-SUFFIX,manifest.webmanifest,PROXY
+  - DOMAIN-SUFFIX,vercel.app,PROXY
+  - RULE-SET,reject,REJECT  
+  - RULE-SET,proxy,PROXY
+  - RULE-SET,telegramcidr,PROXY
+  - MATCH,DIRECT
