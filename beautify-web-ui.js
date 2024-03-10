@@ -8,7 +8,9 @@
 // @match        https://chatglm.cn/main/alltoolsdetail
 // @match        https://www.freeok.vip
 // @match        https://www.freeok.pro
-// @match        https://www.feedly.com/*
+// @match        https://feedly.com/*
+// @downloadURL  https://raw.githubusercontent.com/uiliugang/uiliugang.github.io/main/beautify-web-ui.js
+// @updateURL    https://raw.githubusercontent.com/uiliugang/uiliugang.github.io/main/beautify-web-ui.js
 // @grant        none
 // ==/UserScript==
 
@@ -21,8 +23,15 @@
      min-width: unset !important;
     }
 
-    .LayerBuilderInResults__entries > div:nth-child(2) {
+    .LayerBuilderInResults__entries > div:nth-child(2), .LayerBuilderBeyondResults__entries > div:nth-child(2){
         display: none;
+    }
+
+    .LeftnavList {
+        margin-left: 50px;
+    }
+    .LeftnavDock {
+        width: 50px;
     }
 
     ._y05dJu0HEE4KDXQl_02 {
