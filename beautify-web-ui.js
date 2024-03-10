@@ -8,6 +8,7 @@
 // @match        https://chatglm.cn/main/alltoolsdetail
 // @match        https://www.freeok.vip
 // @match        https://www.freeok.pro
+// @match        https://www.feedly.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -18,6 +19,10 @@
     body, html {
      min-height: unset !important;
      min-width: unset !important;
+    }
+
+    .LayerBuilderInResults__entries > div:nth-child(2) {
+        display: none;
     }
 
     ._y05dJu0HEE4KDXQl_02 {
