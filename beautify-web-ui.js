@@ -38,6 +38,10 @@
         margin-bottom: 30px;
     }
 
+    .qMCHnhlnIcaAB1FfqxZm .NttQtYaOU4vI4AbDJgBb {
+        min-height: 140px;
+    }
+
     .KgJROcZ2QnNmfyxhsZvI .WOldSMY37_Moixx1AljK {
         padding-bottom: 0px !important;
     }
