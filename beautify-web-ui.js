@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Beautify Web UI
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Inject your custom CSS into a web page, iframe will also be impacted
 // @author       Newgun
 // @match        https://www.coze.com/space/*
@@ -37,21 +37,22 @@
     ._y05dJu0HEE4KDXQl_02 {
         margin-bottom: 30px;
     }
-
-    .GgZHQbhCPZYqXVil_nkc {
-     margin-left: 24px;
+    
+    div.GgZHQbhCPZYqXVil_nkc:nth-of-type(1){
+        width: 50%;
     }
-    .GgZHQbhCPZYqXVil_nkc.yXFrvezYn_4mi6bhSzMN {
-    width: 300%;
+    div.GgZHQbhCPZYqXVil_nkc:nth-of-type(2){
+        width: 50%;
+        margin-left: -50%;
     }
-    div.GgZHQbhCPZYqXVil_nkc:nth-of-type(1),
-    div.GgZHQbhCPZYqXVil_nkc:nth-of-type(2),
+    div.GgZHQbhCPZYqXVil_nkc:nth-of-type(3){
+        margin-left: -93%;
+    }
     .autboP_xS3EJZt4GoTeY {
         display: none !important;
     }
-    .aside .logo-wrap[data-v-37c807ee], .aside[data-v-37c807ee], .popupShow,
-    .popup, .semi-portal, .aside .logo-wrap[data-v-a3a1df90], .aside[data-v-a3a1df90]{
-        display: none !important;
+    .prompt-container, .el-aside {
+     display: none !important;
     }
     `;
 
