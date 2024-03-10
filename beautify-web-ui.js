@@ -37,9 +37,9 @@
     ._y05dJu0HEE4KDXQl_02 {
         margin-bottom: 30px;
     }
-    
+
     .KgJROcZ2QnNmfyxhsZvI .WOldSMY37_Moixx1AljK {
-        padding-bottom: 0px;
+        padding-bottom: 0px !important;
     }
     
     div.GgZHQbhCPZYqXVil_nkc:nth-of-type(1){
