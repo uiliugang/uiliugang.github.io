@@ -1,2 +1,2 @@
-自用
+自用，美化的 js 主要是调整 coze 的界面， 需要配合油猴插件使用
 ![image](https://github.com/uiliugang/uiliugang.github.io/assets/74343774/0975f91b-4abe-487b-8ee5-852ebd1ebe83)
