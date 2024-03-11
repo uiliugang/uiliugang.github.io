@@ -6,6 +6,8 @@
 // @author       Newgun
 // @match        https://www.coze.com/space/*
 // @match        https://chatglm.cn/main/alltoolsdetail
+// @match        https://www.freeok.vip
+// @match        https://www.freeok.pro
 // @match        https://feedly.com/*
 // @downloadURL  https://raw.githubusercontent.com/uiliugang/uiliugang.github.io/main/beautify-web-ui.js
 // @updateURL    https://raw.githubusercontent.com/uiliugang/uiliugang.github.io/main/beautify-web-ui.js
@@ -43,7 +45,7 @@
     .KgJROcZ2QnNmfyxhsZvI .WOldSMY37_Moixx1AljK {
         padding-bottom: 0px !important;
     }
-    
+
     div.GgZHQbhCPZYqXVil_nkc:nth-of-type(1){
         width: 280px;
         height: 250px;
@@ -73,7 +75,7 @@
     .autboP_xS3EJZt4GoTeY {
         display: none !important;
     }
-    .prompt-container, .el-aside {
+    .prompt-container, .el-aside, #dialog-0 {
      display: none !important;
     }
     `;
