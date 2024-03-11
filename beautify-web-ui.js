@@ -6,8 +6,6 @@
 // @author       Newgun
 // @match        https://www.coze.com/space/*
 // @match        https://chatglm.cn/main/alltoolsdetail
-// @match        https://www.freeok.vip
-// @match        https://www.freeok.pro
 // @match        https://feedly.com/*
 // @downloadURL  https://raw.githubusercontent.com/uiliugang/uiliugang.github.io/main/beautify-web-ui.js
 // @updateURL    https://raw.githubusercontent.com/uiliugang/uiliugang.github.io/main/beautify-web-ui.js
