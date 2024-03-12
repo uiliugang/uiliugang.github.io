@@ -73,7 +73,7 @@
     .autboP_xS3EJZt4GoTeY {
         display: none !important;
     }
-    .prompt-container, .el-aside, #dialog-0 {
+    .prompt-container, .el-aside, #dialog-0, .semi-modal-mask {
      display: none !important;
     }
     `;
