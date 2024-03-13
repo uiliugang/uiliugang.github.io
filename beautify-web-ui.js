@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Beautify Web UI
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Inject your custom CSS into a web page, iframe will also be impacted
 // @author       Newgun
 // @match        https://www.coze.com/space/*
