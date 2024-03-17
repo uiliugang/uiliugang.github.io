@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Beautify Web UI
 // @namespace    http://tampermonkey.net/
-// @version      0.4
+// @version      0.3
 // @description  Inject your custom CSS into a web page, iframe will also be impacted
 // @author       Newgun
 // @match        https://www.coze.com/space/*
@@ -73,7 +73,7 @@
     .autboP_xS3EJZt4GoTeY {
         display: none !important;
     }
-    .prompt-container, .el-aside, .semi-modal-mask {
+    .prompt-container, .el-aside, .semi-modal-mask, .semi-modal-wrap.semi-modal-wrap-center  {
      display: none !important;
     }
     `;
