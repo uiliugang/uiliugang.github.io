@@ -42,13 +42,13 @@
 
         .tab-container {
             display: flex;
-            width: fit-content; 
             margin-top: 8px;
             justify-content: center;
             align-items: center;
         }
 
         .tab-group {
+            width: fit-content;
             margin-left: 10px;
             padding: 8px;
             border-radius: 8px;
@@ -80,7 +80,7 @@
 
         .iframe-container {
             height: calc(100% - 50px);
-            width: 98%;
+            width: calc(100% - 20px);
         }
     </style>
 </head>
@@ -94,7 +94,7 @@
             <li><a href="#tab3" onclick="showTab(3)">GPT4</a></li>
             <li><a href="#tab4" onclick="showTab(4)">Coze</a></li>
             <li><a href="#tab5" onclick="showTab(5)">GLM4</a></li>
-            <li><a href="#tab7" onclick="showTab(7)">Gemini</a></li>
+            <!-- <li><a href="#tab7" onclick="showTab(7)">Gemini</a></li> -->
             <li><a href="#tab6" onclick="showTab(6)">Poe</a></li>
         </ul>
     </div>
@@ -106,9 +106,9 @@
             <iframe src="https://chatglm.cn/main/alltoolsdetail"></iframe>
         </div>
 
-        <div id="tab7" class="tab">
-            <iframe src="https://gemini-pro.chat/"></iframe>
-        </div>
+        <!-- <div id="tab7" class="tab">
+            <iframe src="https://aistudio.google.com/app/prompts/new_chat"></iframe>
+        </div> -->
 
         <div id="tab3" class="tab">
             <iframe src="https://gpt4.yanghuan.site/#/chat"></iframe>
