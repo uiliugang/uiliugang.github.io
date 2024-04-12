@@ -40,24 +40,6 @@
             color: #000;
         }
 
-        .tab-container {
-            display: flex;
-            margin-top: 8px;
-            justify-content: center;
-            align-items: center;
-            transition: 0.3 0.3s ease; 
-        }
-
-        .tab-group {
-            width: fit-content;
-            margin-left: 10px;
-            padding: 8px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 8px hsla(210, 40%, 80%, 0.6), 
-                        0px 0px 4px hsla(210, 40%, 80%, 0.4), 
-                        0 0 0 1px hsla(210, 20%, 95%, 0.5);       
-        }
-
         .tab {
             display: none;
             height: 100%;
@@ -86,10 +68,10 @@
         /* 悬浮按钮的基础样式 */
         .floating-button {
             position: fixed; /* 固定定位，使按钮悬浮在视口的指定位置 */
-            right: 25px; 
-            bottom: calc(20% + 40px);
-            width: 40px; /* 设置按钮的宽度 */
-            height: 40px; /* 设置按钮的高度 */  
+            right: 24px; 
+            top: 66px;
+            width: 36px; /* 设置按钮的宽度 */
+            height: 36px; /* 设置按钮的高度 */  
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg'); /* 设置PNG图标的路径 */
             background-size: contain;
             background-repeat: no-repeat; /* 图标不重复显示 */
@@ -111,12 +93,12 @@
             display: none; 
             position: fixed; 
             right: 18px; 
-            bottom: calc(15% - 43px); 
+            top: 103px; 
             list-style: none; /* 移除列表样式 */
             margin: 0; /* 移除默认外边距 */
-            padding: 5px 9px; /* 添加内边距 */
+            padding: 6px 6px; /* 添加内边距 */
             width: fit-content;
-            background-color: white;
+            background-color: transparent;
             border-radius: 8px;
             box-shadow: 0px 0px 8px hsla(210, 40%, 80%, 0.6), 
                         0px 0px 4px hsla(210, 40%, 80%, 0.4), 
@@ -126,7 +108,8 @@
 
         /* 下拉菜单项的样式 */
         .dropdown-item {
-            padding: 3px 0px;
+            padding: 4px 0px;
+            font: 0.95em sans-serif;
             display: block; /* 块级元素 */
             color: #333333ba; /* 文字颜色 */
             text-decoration: none; /* 移除下划线 */
@@ -155,15 +138,10 @@
           <a href="#gpt" class="dropdown-item" onclick="showTab('GPT')">GPT</a>
           <a href="#poe" class="dropdown-item" onclick="showTab('Poe')">Poe</a>
           <a href="#devv" class="dropdown-item" onclick="showTab('Devv')">Devv</a>
-          <a href="#glm" class="dropdown-item" onclick="showTab('GLM')">GLM</a>
         </div>
       </div>
 
     <div class="iframe-container">
-
-        <div id="GLM" class="tab">
-            <iframe src="https://chatglm.cn/main/alltoolsdetail"></iframe>
-        </div>
 
         <div id="GPT" class="tab">
             <iframe src="https://gpt4.yanghuan.site/#/chat"></iframe>
@@ -188,6 +166,7 @@
             for (var i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove("active");
             }
+
             // 显示选定的选项卡
             // document.querySelector(".floating-button").textContent = ele;
             document.getElementById(ele).classList.add("active");
